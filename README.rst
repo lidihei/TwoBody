@@ -21,3 +21,8 @@ License
 
 This project is Copyright (c) Adrian Price-Whelan and licensed under the terms
 of the MIT license. See the ``licenses`` folder for more information.
+
+
+Install
+-------
+pip install install git+https://github.com/lidihei/TwoBody.git
