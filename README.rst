@@ -25,4 +25,4 @@ of the MIT license. See the ``licenses`` folder for more information.
 
 Install
 -------
-pip install install git+https://github.com/lidihei/TwoBody.git
+pip install git+https://github.com/lidihei/TwoBody.git
