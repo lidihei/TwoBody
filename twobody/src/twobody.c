@@ -164,7 +164,7 @@ double c_eccentric_anomaly_from_true_anomaly(double f, double e) {
 
     */
     double E;
-    E = atan2(sqrt(1 - e*e) * sin(f), e + cos(f));
+    E = 2*atan2(sqrt(1 - e*e) * sin(f/2), e + cos(f/2));
     return mod_angle(E);
 }
 
@@ -174,7 +174,7 @@ void c_rv_from_elements(double *t, double *rv, int N_t,
     /* Compute the RV of the primary w.r.t. the system barycenter */
     double M, E, f;
     for (int n=0; n < N_t; n++) {
-        M = 2 * M_PI * (t[n] - t0) / P - M0;
+        M = 2 * M_PI * (t[n] - t0) / P + M0; /* M = 2 * M_PI * (t[n] - t0) / P - M0;*/
         E = c_eccentric_anomaly_from_mean_anomaly_Newton1(M, e,
                                                           tol, maxiter);
         f = c_true_anomaly_from_eccentric_anomaly(E, e);
