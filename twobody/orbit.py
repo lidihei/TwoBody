@@ -301,7 +301,8 @@ class KeplerOrbit:
 
         # mean anomaly
         with u.set_enabled_equivalencies(u.dimensionless_angles()):
-            M = 2 * pi * dt / self.P - self.M0
+            M = 2 * pi * dt / self.P + self.M0 # modified by lijiao
+            #M = 2 * pi * dt / self.P + self.M0 # the original one
             M = M.to(u.radian)
 
         # eccentric anomaly
